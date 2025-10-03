@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* flowbite | default theme */
+/* @import "flowbite/src/themes/default"; */
+
+/* flowbite | plugin */
+@plugin "flowbite/plugin";
+
+/* source file */
+@source "../node_modules/flowbite";
+
+/* animate section */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDownLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes slideDownRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+
+.animate-slideDown-left {
+  animation: slideDownLeft 0.3s ease-out forwards;
+}
+.animate-slideDown-right{
+    animation: slideDownRight 0.3s ease-out forwards;
+}
