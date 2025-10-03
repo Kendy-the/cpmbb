@@ -54,7 +54,7 @@
                     <div class="flex items-center">
                         <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                             <li>
-                                <a href="#" 
+                                <a href="/" 
                                 @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
@@ -62,7 +62,7 @@
                                 ])>Accueil</a>
                             </li>
                             <li>
-                                <a href="#" 
+                                <a href="{{ route('programs') }}" 
                                 @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
@@ -70,7 +70,7 @@
                                 ])>Programmes</a>
                             </li>
                             <li>
-                                <a href="#" 
+                                <a href="{{ route('about') }}" 
                                 @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
@@ -78,7 +78,7 @@
                                 ])>A propos</a>
                             </li>
                             <li>
-                                <a href="#" 
+                                <a href="{{ route('contact') }}" 
                                 @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
@@ -87,15 +87,15 @@
                             </li>
                         </ul>
                     </div>
-                    <div x-show="isSticky" class="flex items-center space-x-6 rtl:space-x-reverse">
-                        <a href="#" 
+                    <div x-show="isSticky" class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
+                        <a href="{{ route('register') }}" 
                         @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
                                     request()->route() != null ? request()->route()->getName() : ' ','register')
                                 ])>S'inscrire</a>
                         <span class="mx-1 w-0.5 h-7 bg-white"></span>
-                        <a href="#" 
+                        <a href="{{ route('login') }}" 
                         @class([
                                     'text-sm hover:underline',
                                     'underline' => str_contains(
@@ -124,10 +124,10 @@
                         <h2 class="mb-6 text-sm font-semibold uppercase">Resources</h2>
                         <ul class="font-medium">
                             <li class="mb-4">
-                                <a href="https://cpmb.com/" class="hover:underline">Programmes</a>
+                                <a href="{{ route('programs') }}" class="hover:underline">Programmes</a>
                             </li>
                             <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">A propos</a>
+                                <a href="{{ route('about') }}" class="hover:underline">A propos</a>
                             </li>
                         </ul>
                     </div>
@@ -157,7 +157,7 @@
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-50 sm:text-center ">© 2023 <a href="https://flowbite.com/" class="hover:underline">Cpmb™</a>. All Rights Reserved.
+                <span class="text-sm text-gray-50 sm:text-center ">© 2023 <a href="/" class="hover:underline">Cpmb™</a>. All Rights Reserved.
                 </span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
                     <a href="#" class="text-gray-50 hover:text-gray-900 ">

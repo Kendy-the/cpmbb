@@ -8,15 +8,15 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', function(){
-    return '';
+    return view('site.about');
 })->name('about');
 
 Route::get('/programs', function(){
-    return '';
+    return view('site.programs');
 })->name('programs');
 
 Route::get('/contact', function(){
-    return '';
+    return view('site.contact');
 })->name('contact');
 
 Route::get('/dashboard', function () {

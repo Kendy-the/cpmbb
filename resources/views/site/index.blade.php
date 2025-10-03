@@ -73,6 +73,9 @@
         </div>
     </section>
 
+    {{-- Statistics --}}
+    <x-statistics></x-statistics>
+
     {{-- comment --}}
     <x-comment></x-comment>
 

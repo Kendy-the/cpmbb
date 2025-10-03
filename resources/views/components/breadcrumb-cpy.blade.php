@@ -1,8 +1,12 @@
-<nav class="text-white absolute z-40 top-50" aria-label="Breadcrumb">
+<nav x-data="breadcrump()" x-init="init()"
+    class="transition-all duration-300 z-50" aria-label="Breadcrumb"
+    :class="isBreadSticky ? 'fixed top-12 w-full inset-x-0 shadow-lg animate-slideDown z-40 bg-gray-50' : 'relative bg-primary text-white'"
+    >
+            
     <div class="max-w-screen-xl mx-auto flex p-2">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
-                <a href="/" class="inline-flex items-center text-sm py-1 px-2 rounded font-medium hover:underline">
+                <a href="#" class="inline-flex items-center text-sm py-1 px-2 rounded font-medium hover:bg-primary-500">
                     <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
@@ -21,11 +25,8 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="m1 9 4-4-4-4" />
                         </svg>
-                        <a href="{{ $item['link'] ?? '#' }}"
-                            @class([
-                                'ms-1 text-sm py-1 px-2 rounded font-medium hover:underline md:ms-2',
-                                'underline' => $item['active']
-                            ])>
+                        <a href="#"
+                            class="ms-1 text-sm py-1 px-2 rounded font-medium hover:bg-primary-500 md:ms-2">
                             {{ $item['name'] }}</a>
                     </div>
                 </li>
@@ -36,3 +37,16 @@
         </ol>
     </div>
 </nav>
+
+<script>
+    function breadcrump() {
+        return {
+            isBreadSticky: false,
+            init() {
+                window.addEventListener('scroll', () => {
+                    this.isBreadSticky = window.scrollY > 50
+                })
+            }
+        }
+    }
+</script>
